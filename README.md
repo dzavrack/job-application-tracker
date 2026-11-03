@@ -4,6 +4,8 @@
 
 It tracks each application, the people worth talking to at each company, the full conversation history, and what to do next. It also flags which threads have gone cold.
 
+**[Try the live demo →](https://dzavrack.github.io/job-application-tracker/)** It has fictional data, and the Claude features work with your own API key.
+
 ![Applications view](docs/applications.png)
 
 > The data in this repo is fictional demo data. My real tracker runs on the same code with my own applications.
@@ -32,7 +34,7 @@ It tracks each application, the people worth talking to at each company, the ful
 
 ## Run it
 
-Open `index.html` in a browser; nothing to install. To use the Claude features, click **Settings** and paste an [Anthropic API key](https://console.anthropic.com/).
+Use the [live demo](https://dzavrack.github.io/job-application-tracker/), or open `index.html` in a browser; nothing to install. To use the Claude features, click **Settings** and paste an [Anthropic API key](https://console.anthropic.com/).
 
 To track your own search, replace the sample data in `data.js`, or start adding jobs with **+ Add job**.
 
