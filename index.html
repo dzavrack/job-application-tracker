@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Application Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Job Application Tracker</h1>
+      <p class="sub">Every application, who to talk to, what's been said, and what to do next.</p>
+      <div class="toolbar">
+        <button id="btn-add" class="primary">+ Add job</button>
+        <button id="btn-settings">Settings</button>
+      </div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+  <p class="demo-note">Demo data: every company and person below is fictional. Jobs you add are saved only in this browser.</p>
+  <nav class="tabs" id="tabs"></nav>
+  <section id="view"></section>
+</div>
+
+<dialog id="add-dialog">
+  <form id="add-form">
+    <h3>Add a job with Claude</h3>
+    <p class="muted">Paste the full posting. Claude pulls out the company, title, pay, location and a short summary, and suggests first steps.</p>
+    <label>Job posting text<textarea id="posting" rows="10" placeholder="Paste the job description here…"></textarea></label>
+    <label>Posting URL (optional)<input id="posting-url" type="url" placeholder="https://…"></label>
+    <label>Status
+      <select id="add-status"><option>Applied</option><option>Interested</option></select>
+    </label>
+    <p class="err"></p>
+    <div class="actions"><button type="button" class="cancel">Cancel</button><button type="submit" class="primary">Add with Claude</button></div>
+  </form>
+</dialog>
+
+<dialog id="settings-dialog">
+  <form id="settings-form">
+    <h3>Settings</h3>
+    <label>Anthropic API key<input id="api-key" type="password" placeholder="sk-ant-…" autocomplete="off"></label>
+    <p class="muted">Stored only in this browser's local storage and sent only to api.anthropic.com.</p>
+    <label>Model (optional)<input id="model" placeholder="claude-sonnet-5-5"></label>
+    <p class="err"></p>
+    <div class="actions spread">
+      <span><button type="button" id="btn-export">Export my data</button> <button type="button" id="btn-clear">Clear my data</button></span>
+      <span><button type="button" class="cancel">Close</button> <button type="submit" class="primary">Save</button></span>
+    </div>
+  </form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="claude.js"></script>
+</body>
+</html>
